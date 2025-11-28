@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: lampac
+    env: docker
+    image: immisterio/lampac:latest
+    plan: free
+    docker:
+      dockerfile: Dockerfile
+    port: 9118
+    envVars:
+      - key: PORT
+        value: 9118
+    healthCheckPath: /
+    autoDeploy: true
